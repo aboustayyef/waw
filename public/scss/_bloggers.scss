@@ -1,0 +1,10 @@
+
+// Hide header of posts
+
+div.posts.cards.blogger{
+	.post_wrapper{
+		.blog_header{
+			display:none;
+		}
+	}
+}

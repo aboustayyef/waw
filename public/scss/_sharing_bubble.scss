@@ -1,0 +1,113 @@
+div.bubblewrapper
+{
+  font-size: 0.85em;
+  display:none;
+  width: 270px;
+  overflow: auto;
+  position:absolute;
+  bottom: 22px;
+  right:18px;
+  padding: 0 3px;
+  padding-top:3px;
+
+  ul.sharing{
+    overflow:auto;
+    background: white;
+    margin-bottom:20px;
+    border: solid 1px #ADADAD;
+    box-shadow: 0px 0px 2px rgba(50, 50, 50, 0.5);
+    li{
+      cursor:pointer;
+      font-size:0.9em;
+      padding:8px;
+      &.addToFavorites{
+        i{
+          color:silver;
+        }
+      }
+      &.removeFromFavorites{
+        i{
+          color:$brand-color;
+        }
+      }
+      &.addToSaved{
+        i{
+          color:silver;
+        }
+      }
+      &.removeFromSaved{
+        i{
+          color:$brand-color;
+        }
+      }
+      i{
+        margin-right: 10px;
+      }
+      &:hover{
+        background:darken(white,5);
+        color:white
+        a{
+          color:white;
+        }
+      }
+    &.dim{
+        cursor:not-allowed;
+        color:darken(white,30);
+        &:hover{
+          &:after{
+            content: 'needs login';
+            color: $brand-color;
+            margin-left:5px;
+          }
+        }
+      }
+    }
+    li.header {
+      cursor:default;
+      color: $brand-color;
+      font-weight: bold;
+      &:hover{
+        background:inherit;
+      }
+    }
+    li.header ~ li.header{
+      margin-top:5px;
+      border-top:1px solid grey;
+    }
+  }
+
+  /*
+
+  Below is simply to achieve the tooltip triangle
+
+  */
+
+  &:before
+  {
+    position: absolute;
+    display: block;
+    content: "";
+    border-color: rgb(156,156,156) transparent transparent transparent;
+    border-style: solid;
+    border-width: 10px;
+    height:0;
+    width:0;
+    position:absolute;
+    bottom:0px;
+    left:218px;
+  }
+  &:after
+  {
+    position: absolute;
+    display: block;
+    content: "";
+    border-color: white transparent transparent transparent;
+    border-style: solid;
+    border-width: 10px;
+    height:0;
+    width:0;
+    position:absolute;
+    bottom:2px;
+    left:218px;
+  }
+}

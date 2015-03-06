@@ -1,0 +1,163 @@
+#topBar{
+
+// General rules
+  height: $header-height;
+  position:fixed;
+  top:0;
+  z-index:5;
+  width:100%;
+  background:$header-background;
+  color: white;
+  i{
+    padding: ($header-height - 25px)/2;
+    font-size: 25px;
+  }
+  @include lbTransitions();
+
+  #hamburger{
+    text-align: center;
+    padding: 14px 0;
+    svg{
+      width:24px;
+      height:20px;
+      path{
+        fill:white;
+      }
+    }
+    border-right:1px solid white;
+    width:$header-height - 1;
+    cursor: pointer;
+    &:hover{
+      background: rgba(0,0,0,0.2);
+    }
+  }
+
+  #logo{
+    margin-left:20px;
+    width:150px;
+    height: 50px;
+    background: url(../img/logo-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 150px 40px;
+    background-position-y:5px;
+    @media screen and (min-width:401px){
+      width:250px;
+      background: url(../img/logo.png);
+      background-repeat: no-repeat;
+      background-size: 250px 40px;
+      background-position-y:5px;
+    }
+
+    position:absolute;
+    left: $header-height;
+    top:0;
+    line-height:$header-height;
+    p{
+      width: 260px;
+      font-size: 12px;
+      line-height: 15px;
+      margin-left: 300px;
+      margin-top: 12px;
+      color: #F3DEE0;
+      strong{
+        font-weight: bold;
+        color:white;
+      }
+      @media screen and (max-width:700px){
+        display:none;
+      }
+    }
+  }
+
+  #about{
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    top:10px;
+    right:10px;
+    z-index: 5;
+    padding: 7px;
+    border: 1px solid lighten($brand-color, 30);
+    &:hover{
+      background:darken($brand-color, 10);
+    }
+  }
+
+  #aboutMenu{
+    top:-220px;
+    opacity:0;
+    z-index: 0;
+    display: inline-block;
+    width: 300px - $header-height;
+    position:absolute;
+    @include lbTransitions();
+    right: 10px;
+    li {
+      //height: ($header-height * 3 ) / 4;
+      background:darken($brand-color, 10);
+      padding:10px;
+      border-bottom:1px solid lighten($brand-color, 10);
+      &last:child{
+        border-bottom: none;
+      }
+      a {
+        font-size:14px;
+        color: white;
+        text-decoration: none;
+      }
+    }
+    @media screen and (max-width: 360px){
+      width:100%;
+      right:0;
+    }
+  }
+
+  #about.open{
+    background: darken($brand-color, 10);
+  }
+
+  #about.open + #aboutMenu{
+    top: $header-height;
+    opacity: 1;
+  }
+}
+
+#content{
+  padding-top:$header-height;
+  background: $content-background;
+  overflow:auto;
+  -webkit-overflow-scrolling: touch;
+  .currentChannel{
+    position:relative;
+    letter-spacing: 3px;
+    border-top:1px dashed white;
+    border-bottom:1px dashed white;
+    color:white;
+    padding:7px;
+    text-transform:uppercase;
+    text-align:center;
+    i{
+      margin-right:10px;
+      font-size:16px;
+    }
+    // closing for channels
+    .close{
+      position:absolute;
+      top:0;
+      left:0;
+      cursor:pointer;
+      a{
+        display:block;
+        font-size: 1.5em;
+        opacity:0.8;
+        height:29px;
+        line-height:29px;
+        width:29px;
+        &:hover{
+          opacity:1;
+          background:rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
+}

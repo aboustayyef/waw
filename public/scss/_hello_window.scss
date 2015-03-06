@@ -1,0 +1,31 @@
+//general rule
+.inner{
+  padding:10px;
+}
+
+.helloWindowArea{
+  width:100%;
+  margin-top: 15px;
+  padding-bottom:0; // because div below has a margin top of 10
+  .helloWindow
+  {
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    margin:auto;
+    width:680px;
+    max-width:90%;
+    overflow: auto;
+    .leftMessage{
+      float:left;
+      text-align:center;
+      font-size:16px;
+      line-height:18px;
+    }
+    .rightMessage{
+      background:white;
+      font-size: 14px;
+      line-height:18px;
+      float:left;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+#scroller{
+  width:$sidebar-width;
+  overflow-y:auto;
+  overflow-x:hidden;
+  max-height:100%;
+}
+
+#sidebar{
+
+  position:fixed;
+  width:$sidebar-width;
+  background:$sidebar-background;
+  top:0;
+  bottom:0;
+  left: - ( $sidebar-width);
+  z-index:3;
+  border-right: 1px solid silver;
+  backface-visibility: hidden;
+  perspective: 1000;
+  @include lbTransitions() ;
+  .close{
+    cursor:pointer;
+    position:absolute;
+    top:0;
+    right:0;
+    padding:16px;
+    img{
+      height:19px;
+      width:19px;
+    }
+  }
+
+    @mixin userInfo{
+      // applies to both signed in and non signed in user
+      display:block;
+      width:190px;
+      float:left;
+      padding:10px;
+    }
+  }
+  #channels{
+    padding:10px;
+    h3{
+      color:white;
+      margin:10px 0;
+      width:230px;
+      float:left;
+    }
+    ul{
+      font-size:0.75em;
+      overflow:auto;
+      width:320px;
+      li.categoryButton{
+        border-radius: 3px;
+        margin-top:7px;
+        display:block;
+        background:#555;
+        padding:7px;
+        margin-right: 5px;
+        float:left;
+        color: white;
+        height:30px;
+        svg{
+          width:13px;
+          margin-right:3px;
+          path{
+            fill:#D8D8D8;
+          }
+        }
+        &:hover{
+          background:#666;
+        }
+        &.selected{
+          background:$brand-color;
+        }
+        &.showAll{
+          background:transparent;
+          border:2px solid #555;
+          width:270px;
+          margin-bottom:15px;
+          &:hover{
+            background:#666;
+          }
+        }
+      }
+    }
+  }
+
+  .credits{
+    padding:30px 10px;
+    color: darken(silver,40);
+    font-size:12px;
+    a{
+      color: darken(silver,20);
+    }
+  }
+.searchform {
+  margin-bottom:20px;
+  input{
+    padding: 8px;
+    border:0;
+    border-radius:0;
+  }
+  input[type="text"]{
+    width:190px;
+    background: darken(white,10);
+  }
+  input[type="submit"]{
+    width:60px;
+    background:#929292;
+    -webkit-appearance: none;
+    -webkit-border-radius:0;
+    border-radius:0;
+  }
+}

@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#list_countdown").countdown("2014/12/22 08:00:00",function(t){$(this).text(t.strftime("%D days %H:%M:%S"))})});

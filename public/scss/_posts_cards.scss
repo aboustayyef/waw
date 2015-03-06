@@ -1,0 +1,267 @@
+div.posts.cards{
+  .rtl{
+    font-family: 'Droid Arabic Naskh', serif;
+    font-weight: bold;
+    direction:rtl;
+    float:right;
+    margin-right:0;
+    margin-left:10px;
+  }
+  margin: auto;
+  margin-top:30px;
+  div.card{
+    background:white;
+    border:1px solid lighten(#999, 10);
+    position:relative;
+    min-height: 320px;
+    &.push_down{
+      margin-bottom:20px;
+    }
+    &.no_color{
+      background-color:transparent;
+    }
+    &.no_border{
+      border:none;
+    }
+    &.no_min{
+      border:0;
+      min-height: 0;
+    }
+  }
+
+  div.post_wrapper{
+    visibility:hidden;
+    width:$card-width;
+    margin:10px;
+    div.blog_header{
+      .blogname{
+        position:absolute;
+        text-transform:uppercase;
+        top:15px;
+        left: 70px;
+        width:130px;
+        font-size:12px;
+        line-height:18px;
+        a{
+          color: rgba(0,0,0,0.6);
+          text-decoration: none;
+          font-size:12px;
+        }
+      }
+      padding:10px;
+      background: rgba(0,0,0,0.03);
+      position: relative;
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+
+      img.thumbnail{
+        border-radius:50%;
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+      .followBlogger{
+        cursor: pointer;
+        position:absolute;
+        font-size:12px;
+        top:20px;
+        right:10px;
+        color: #B3B3B3;
+        &:hover{
+            &:after{
+              border-color:$brand-color;
+              color:$brand-color;
+            }
+          }
+        &:after{
+          content:"+ Follow";
+          padding:5px;
+          border:1px solid #B3B3B3;
+          border-radius: 5px;
+        }
+        &.followed{
+          &:after{
+            content: "✓ Followed";
+          }
+          &:hover{
+            &:after{
+              content:"x Unfollow";
+            }
+          }
+        }
+      }
+
+    }
+    div.post_body{
+      h2{
+        font-size:16px;
+        padding:10px;
+        line-height:24px;
+        color:#444;
+        &.rtl{
+          margin-top: 10px;
+          font-size:16px;
+        }
+        a{
+          color: #444;
+          text-decoration:none;
+        }
+      }
+      p{
+        padding:10px 20px;
+        font-size:15px;
+        line-height:25px;
+        color: rgba(0,0,0,0.4);
+        margin-bottom:20px;
+        overflow:hidden;
+        &:first-letter{
+          line-height: 42px;
+          text-transform: uppercase;
+          font-size: 20px;
+          line-height: 36px;
+          margin-right: 7px;
+          color: #8B8B8B;
+          border: 1px solid #ADA9A9;
+          float: left;
+          text-align: center;
+          background: #EBEBEB;
+          padding: 0 12px;
+          margin-top: 5px;
+        }
+        &.rtl{
+          &:first-letter{
+            float:right;
+            margin-right:0;
+            margin-left:7px;
+            padding: 0 12px;
+          }
+        }
+      }
+      img{
+        margin:9px;
+        border:1px solid rgba(0,0,0,0.1);
+      }
+      .metaInfo{
+        height:30px;
+        padding:15px 10px;
+        width:100%;
+        position:relative;
+        color: $brand-color;
+        .postedSince{
+          position: absolute;
+          left:10px;
+          font-size:12px;
+          display:inline-block;
+        }
+        .viralityWrapper{
+          color: rgba(0,0,0,0.5);
+          position:absolute;
+          right:10px;
+          display:inline-block;
+          font-size:0.8em;
+          .viralityBox{
+            display:inline-block;
+            width:100px;
+            height:5px;
+            padding:0;
+            border:none;
+            background:#e7e7e7;
+            .viralityScore{
+              height:5px;
+            }
+          }
+        }
+      }
+    }
+    div.tools_footer{
+      height:35px;
+      overflow: auto;
+      position:relative;
+      clear:both;
+    }
+
+    .sharingButton{
+      cursor: pointer;
+      bottom: 8px;
+      position: absolute;
+      font-size: 0.8em;
+      display: block;
+      padding: 5px;
+      border: 1px solid darken(white,10);
+      border-radius: 3px;
+      border-bottom: 2px solid darken(white,15);
+      color: darken(white,35);
+      svg{
+        width:12px;
+        path{
+          fill: darken(white,35);
+        }
+      }
+      &:hover{
+        background: $brand-color;
+        color: white;
+        border-color:darken($brand-color,8);
+        svg{
+          path{
+            fill: white;
+          }
+        }
+      }
+    }
+    .tweetit{
+      right: 66px;
+    }
+    .likeit{
+      right:10px;
+      &.active{
+        color: white;
+        background: $brand-color;
+        &:hover{
+          background:darken($brand-color,5);
+        }
+      }
+      &.liked{
+        svg{
+          path{
+            fill:$brand-color;
+          }
+        }
+      }
+    }
+
+    div.editpost{
+      background:$brand-color;
+      position: absolute;
+      bottom: 5px;
+      left: 9px;
+      padding: 5px;
+      a{
+        font-size:12px;
+        color:white;
+      }
+    }
+  }
+}
+div.postvisits{
+  position: absolute;
+  bottom: 5px;
+  left: 110px;
+  background: beige;
+  padding: 5px;
+  }
+div.posts.cards{
+  @media screen and (max-width:430px){
+    margin-top:20px;
+    width:100%;
+    margin:0;
+    div.post_wrapper{
+      margin:0;
+      width:100%;
+    }
+    div.card{
+      margin:10px;
+      border:none;
+      border-top: 1px solid #b3b3b3;
+      .push_down{
+        margin-bottom:0;
+      }
+    }
+  }
+}

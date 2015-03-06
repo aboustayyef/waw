@@ -1,0 +1,18 @@
+$brand-color: #b12530;
+$brand-secondary-color: #ffcc66;
+
+$links-color: $brand-color;
+
+$header-background: $brand-color;
+$header-height: 50px;
+
+$sidebar-width: 320px;
+$sidebar-background: #353535;
+
+$content-background: #d1d1d1;
+
+$card-width: 300px;
+
+@mixin lbTransitions(){
+transition: 0.2s;
+}
